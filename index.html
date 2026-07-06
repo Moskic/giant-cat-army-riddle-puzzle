@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="只用加 5、加 7 和开平方，依次得到 2、10 和 14。"
+    />
+    <title>巨型猫军团谜题</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="./" data-i18n="brand">巨型猫军团谜题</a>
+        <button class="language-toggle" id="languageToggle" type="button">EN</button>
+      </header>
+
+      <main class="main-content">
+        <section class="card intro-card" aria-labelledby="pageTitle">
+          <p class="eyebrow" data-i18n="eyebrow">数字谜题</p>
+          <h1 id="pageTitle" data-i18n="title">你能破解巨型猫军团谜题吗？</h1>
+          <p class="intro" data-i18n="intro">
+            从 0 开始，只使用加 5、加 7 和开平方，依次得到 2、10 和 14。
+          </p>
+        </section>
+
+        <section class="card game-card" aria-labelledby="gameTitle">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow" data-i18n="gameLabel">当前挑战</p>
+              <h2 id="gameTitle" data-i18n="gameTitle">找到目标数字</h2>
+            </div>
+            <button class="restart-button" id="restartButton" type="button" data-i18n="restart">
+              重新开始
+            </button>
+          </div>
+
+          <div class="goal-row" aria-label="目标进度" id="goalRow">
+            <span class="goal" data-goal-index="0">2</span>
+            <span class="goal-arrow" aria-hidden="true">→</span>
+            <span class="goal" data-goal-index="1">10</span>
+            <span class="goal-arrow" aria-hidden="true">→</span>
+            <span class="goal" data-goal-index="2">14</span>
+          </div>
+          <p class="progress-text" id="progressText" aria-live="polite"></p>
+
+          <div class="display-panel">
+            <span class="display-label" data-i18n="displayLabel">当前数字</span>
+            <strong class="display-value" id="displayValue">0</strong>
+          </div>
+
+          <div class="operations" aria-label="数字操作" id="operations">
+            <button class="operation-button" type="button" data-operation="add5">
+              <span class="operation-symbol">+5</span>
+              <span class="operation-name" data-i18n="addFive">加五</span>
+            </button>
+            <button class="operation-button" type="button" data-operation="add7">
+              <span class="operation-symbol">+7</span>
+              <span class="operation-name" data-i18n="addSeven">加七</span>
+            </button>
+            <button class="operation-button" type="button" data-operation="sqrt">
+              <span class="operation-symbol">√</span>
+              <span class="operation-name" data-i18n="squareRoot">开平方</span>
+            </button>
+          </div>
+
+          <div class="result" id="result" role="status" aria-live="assertive" hidden>
+            <strong id="resultTitle"></strong>
+            <p id="resultMessage"></p>
+          </div>
+        </section>
+
+        <section class="card history-card" aria-labelledby="historyTitle">
+          <div class="section-heading compact">
+            <h2 id="historyTitle" data-i18n="historyTitle">操作记录</h2>
+            <span class="step-count" id="stepCount"></span>
+          </div>
+          <ol class="history-list" id="historyList"></ol>
+          <p class="empty-history" id="emptyHistory" data-i18n="emptyHistory">
+            选择一个操作，开始你的第一步。
+          </p>
+        </section>
+
+        <section class="rules" aria-labelledby="rulesTitle">
+          <h2 id="rulesTitle" data-i18n="rulesTitle">游戏规则</h2>
+          <ul>
+            <li data-i18n="ruleOne">必须依次得到 2、10 和 14。</li>
+            <li data-i18n="ruleTwo">数字不能重复，也不能大于 60。</li>
+            <li data-i18n="ruleThree">每一步的结果都必须是整数。</li>
+          </ul>
+        </section>
+      </main>
+
+      <footer class="site-footer" aria-label="Site footer">
+        <span class="footer-site-name" data-i18n="footerName">巨型猫军团谜题</span>
+        <span aria-hidden="true">/</span>
+        <a href="https://youtu.be/YeMVoJKn1Tg" target="_blank" rel="noreferrer">TED-Ed</a>
+        <span aria-hidden="true">/</span>
+        <span id="footerYear"></span>
+        <span aria-hidden="true">/</span>
+        <time id="footerTime"></time>
+      </footer>
+    </div>
+  </body>
+</html>
